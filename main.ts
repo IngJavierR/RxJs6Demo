@@ -1,31 +1,17 @@
-import { fromEvent } from "rxjs";
-import { scan } from "rxjs/operators";
+import { from } from "rxjs";
+import { filter } from "rxjs/operators";
 
-let output = document.querySelector('#output');
-let button = document.querySelector('#button');
-let unsuscribe = document.querySelector('#unsuscribe');
+let number = [1, 5, 10, 20];
+let source = from(number);
 
-var click = fromEvent(button, 'click');
-var clickUnsuscribe = fromEvent(unsuscribe, 'click');
-
-/*click.pipe(
-    scan((acc:number, curr:any) => acc + 1, 0)
-).subscribe(x => console.log(x));*/
-
-
-/*function add() {
-    let div = document.createElement('div');
-    div.innerText = 'Prueba';
-    output.appendChild(div);
-}*/
-
-/*let clickSubs = click.subscribe(
-    event => add(),
-    error => console.log(`Error: ${error}`),
-    () => console.log('Complete')
-);*/
-
-/*clickUnsuscribe.subscribe(() => {
-    clickSubs.unsubscribe();
-});*/
-
+source.subscribe(
+    value => {
+        console.log(`value: ${value}`);
+    },
+    error => {
+        console.log(`Error: ${error}`);
+    },
+    () => {
+        console.log('Complete');
+    }
+);
