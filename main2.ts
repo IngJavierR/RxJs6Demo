@@ -6,9 +6,9 @@ let source = Observable.create((observer) => {
 
     numbers.forEach(element => {
 
-        if(element === 5){
+        /*if(element === 5){
             observer.error('Algo salio mal');
-        }
+        }*/
         observer.next(element);
     });
 

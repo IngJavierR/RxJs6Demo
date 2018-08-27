@@ -17,9 +17,9 @@ var clickUnsuscribe = fromEvent(unsuscribe, 'click');
     let div = document.createElement('div');
     div.innerText = 'Prueba';
     output.appendChild(div);
-}*/
+}
 
-/*let clickSubs = click.subscribe(
+let clickSubs = click.subscribe(
     event => add(),
     error => console.log(`Error: ${error}`),
     () => console.log('Complete')

@@ -7,7 +7,7 @@ let source = fromEvent(document, 'mousemove')
                                 x: event.clientX,
                                 y: event.clientY
                             }
-                        }), filter(el => {
+                        })/*, filter(el => {
                             return el.x > 600;
                         }));*/
 
